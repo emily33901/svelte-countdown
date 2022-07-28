@@ -48,11 +48,13 @@
                     );
                 }
             }
+
+            if (dayjs.isDayjs(target)) {
+                local = dayjs();
+                diff = target.valueOf() - local.valueOf();
+            }
         } else {
             target = from;
-        }
-
-        if (dayjs.isDayjs(target)) {
             local = dayjs();
             diff = target.valueOf() - local.valueOf();
         }
