@@ -59,7 +59,7 @@
             diff = target.valueOf() - local.valueOf();
         }
 
-        timer = setInterval(function () {
+        let f = function () {
             if (diff > 0) {
                 r = dayjs.duration(diff);
                 remaining = {
@@ -86,7 +86,10 @@
                 };
                 clearInterval(timer);
             }
-        }, 1000);
+        };
+
+        timer = setInterval(f, 1000);
+        f();
     });
 </script>
 
